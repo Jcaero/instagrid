@@ -15,7 +15,7 @@ class layoutButton: UIButton {
         self.contentVerticalAlignment = .fill
         self.contentHorizontalAlignment = .fill
     }
-    
+
     func notShowCheck(){
         self.setImage(nil, for: .normal)
     }
