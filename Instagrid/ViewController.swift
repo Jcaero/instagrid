@@ -8,13 +8,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet weak var rightBtn: UIButton!
-    @IBOutlet weak var middleBtn: UIButton!
-    @IBOutlet weak var leftBtn: UIButton!
+    @IBOutlet weak var rightBtn: layoutButton!
+    @IBOutlet weak var middleBtn: layoutButton!
+    @IBOutlet weak var leftBtn: layoutButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedLayout(for: middleBtn)
+        middleBtn.showCheck()
         // Do any additional setup after loading the view.
     }
 
@@ -25,31 +25,21 @@ class ViewController: UIViewController {
 
     // display selected image behind the right Layout button
     private func selectedLayout(for button : UIButton){
-        let image = UIImage(named: "Selected")
-
+        
         switch button.tag {
-        case 0: leftBtn.setImage(image, for: .normal)
-                setupImage(for: leftBtn)
-                middleBtn.setImage(nil, for: .normal)
-                rightBtn.setImage(nil, for: .normal)
+        case 0: leftBtn.showCheck()
+                middleBtn.notShowCheck()
+                rightBtn.notShowCheck()
 
-        case 1: leftBtn.setImage(nil, for: .normal)
-                middleBtn.setImage(image, for: .normal)
-                setupImage(for: middleBtn)
-                rightBtn.setImage(nil, for: .normal)
+        case 1: leftBtn.notShowCheck()
+                middleBtn.showCheck()
+                rightBtn.notShowCheck()
 
-        case 2: leftBtn.setImage(nil, for: .normal)
-                middleBtn.setImage(nil, for: .normal)
-                rightBtn.setImage(image, for: .normal)
-                setupImage(for: rightBtn)
+        case 2: leftBtn.notShowCheck()
+                middleBtn.notShowCheck()
+                rightBtn.showCheck()
         default : break
         }
-    }
-    
-    //setup Image
-    private func setupImage(for button: UIButton){
-        button.contentVerticalAlignment = .fill
-        button.contentHorizontalAlignment = .fill
     }
     
 }

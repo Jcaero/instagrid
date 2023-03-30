@@ -24,7 +24,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="vju-B8-gNq">
                                 <rect key="frame" x="30" y="696.66666666666663" width="330" height="83.333333333333371"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" preferredBehavioralStyle="pad" translatesAutoresizingMaskIntoConstraints="NO" id="MS6-qe-I9d">
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" preferredBehavioralStyle="pad" translatesAutoresizingMaskIntoConstraints="NO" id="MS6-qe-I9d" customClass="layoutButton" customModule="Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="83.333333333333329" height="83.333333333333329"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="" backgroundImage="Layout 1"/>
@@ -32,7 +32,7 @@
                                             <action selector="modifieLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovh-wJ-jRY"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtL-BE-wHT">
+                                    <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtL-BE-wHT" customClass="layoutButton" customModule="Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="123.33333333333334" y="0.0" width="83.333333333333343" height="83.333333333333329"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" image="Selected" backgroundImage="Layout 2">
@@ -42,7 +42,7 @@
                                             <action selector="modifieLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ID-Ec-v2l"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBQ-bH-Hyp">
+                                    <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBQ-bH-Hyp" customClass="layoutButton" customModule="Instagrid" customModuleProvider="target">
                                         <rect key="frame" x="246.66666666666671" y="0.0" width="83.333333333333343" height="83.333333333333329"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="mBQ-bH-Hyp" secondAttribute="height" multiplier="1:1" id="4Bn-Lu-Tff"/>
