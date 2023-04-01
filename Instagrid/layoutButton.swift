@@ -7,7 +7,7 @@
 
 import UIKit
 
-class layoutButton: UIButton {
+extension UIButton {
 
     func showCheck(){
         let image = UIImage(named: "Selected")

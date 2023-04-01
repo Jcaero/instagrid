@@ -7,49 +7,61 @@
 
 import UIKit
 
+// UIImagePickerViewController
+// CGAffine
+
 class ViewController: UIViewController {
-    @IBOutlet weak var rightBtn: layoutButton!
-    @IBOutlet weak var middleBtn: layoutButton!
-    @IBOutlet weak var leftBtn: layoutButton!
+    @IBOutlet weak var rightBtn: UIButton!
+    @IBOutlet weak var middleBtn: UIButton!
+    @IBOutlet weak var leftBtn: UIButton!
     @IBOutlet weak var topLeftView: UIView!
     @IBOutlet weak var topRightView: UIView!
     @IBOutlet weak var bottomLeftView: UIView!
     @IBOutlet weak var bottomRightView: UIView!
     
+   // override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+
+   // }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedLayout(index: 1)
     }
-
+    
     @IBAction func modifieLayout(_ sender: UIButton) {
         selectedLayout(index: sender.tag)
     }
 
     // display selected image behind the right Layout button
     private func selectedLayout(index: Int){
+        resetView()
+        
         switch index {
-        case 0: leftBtn.showCheck()
-                middleBtn.notShowCheck()
-                rightBtn.notShowCheck()
-                bottomRightView.isHidden = false
-                topRightView.isHidden = true
+        case 0:
+            leftBtn.showCheck()
+            topRightView.isHidden = true
 
-        case 1: leftBtn.notShowCheck()
-                middleBtn.showCheck()
-                rightBtn.notShowCheck()
-                bottomRightView.isHidden = true
-                topRightView.isHidden = false
+        case 1:
+            middleBtn.showCheck()
+            bottomRightView.isHidden = true
 
-        case 2: leftBtn.notShowCheck()
-                middleBtn.notShowCheck()
-                rightBtn.showCheck()
-                bottomRightView.isHidden = false
-                topRightView.isHidden = false
+        case 2:
+            rightBtn.showCheck()
+
         default : break
         }
     }
     
-    
+    // reset view
+    private func resetView() {
+        [leftBtn, middleBtn, rightBtn].forEach {
+            $0?.notShowCheck()
+        }
+        bottomRightView.isHidden = false
+        topRightView.isHidden = false
+    }
 
 }
+
+
 
