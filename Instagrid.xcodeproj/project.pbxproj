@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		47137E2129D81D9A002730E4 /* GridController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 47137E2029D81D9A002730E4 /* GridController.storyboard */; };
 		4795405929D58EE700D2479B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795405829D58EE700D2479B /* AppDelegate.swift */; };
 		4795405B29D58EE700D2479B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795405A29D58EE700D2479B /* SceneDelegate.swift */; };
 		4795405D29D58EE700D2479B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795405C29D58EE700D2479B /* ViewController.swift */; };
@@ -20,7 +19,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		47137E2029D81D9A002730E4 /* GridController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GridController.storyboard; sourceTree = "<group>"; };
 		4795405529D58EE700D2479B /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4795405829D58EE700D2479B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4795405A29D58EE700D2479B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,7 +67,6 @@
 				4795405C29D58EE700D2479B /* ViewController.swift */,
 				47B35BF429D6113000D4012D /* layoutButton.swift */,
 				4795405E29D58EE700D2479B /* Main.storyboard */,
-				47137E2029D81D9A002730E4 /* GridController.storyboard */,
 				4795406129D58EE900D2479B /* Assets.xcassets */,
 				4795406329D58EE900D2479B /* LaunchScreen.storyboard */,
 				4795406629D58EE900D2479B /* Info.plist */,
@@ -139,7 +136,6 @@
 			files = (
 				4795406F29D58F2900D2479B /* Delm-Regular.ttf in Resources */,
 				4795406D29D58F1E00D2479B /* Thirsty-Soft-W01-Regular.ttf in Resources */,
-				47137E2129D81D9A002730E4 /* GridController.storyboard in Resources */,
 				4795406529D58EE900D2479B /* LaunchScreen.storyboard in Resources */,
 				4795406229D58EE900D2479B /* Assets.xcassets in Resources */,
 				4795406029D58EE700D2479B /* Main.storyboard in Resources */,
