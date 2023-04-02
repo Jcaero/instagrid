@@ -22,7 +22,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var swipeUpLbl: UILabel!
     @IBOutlet weak var arrowIV: UIImageView!
     @IBOutlet weak var photosView: ShadowView!
-    @IBOutlet weak var topLeftBtn: UIButton!
+    @IBOutlet weak var topLeftIV: UIImageView!
+    @IBOutlet weak var topRightIV: UIImageView!
+    @IBOutlet weak var bottomLeftIV: UIImageView!
+    @IBOutlet weak var bottomRightIV: UIImageView!
     
     var libraryPicker: PHPickerViewController?
     var viewSelected: Int?
@@ -94,7 +97,7 @@ extension ViewController : PHPickerViewControllerDelegate {
     }
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        
+        picker.dismiss(animated: true, completion: nil)
         guard let first = results.first else { return }
         let newPhotoProvider = first.itemProvider
         guard newPhotoProvider.canLoadObject(ofClass: UIImage.self) else { return }
@@ -105,13 +108,13 @@ extension ViewController : PHPickerViewControllerDelegate {
                 }
                 guard let newImage = image as? UIImage else { return }
                 switch self.viewSelected {
-                case 1: self.topLeftBtn.setImage(newImage, for: .normal)
+                case 1: self.topLeftIV.image = newImage
+                case 2: self.topRightIV.image = newImage
+                case 3: self.bottomLeftIV.image = newImage
+                case 4: self.bottomRightIV.image = newImage
                 default: print("image non ok")
                 }
-                picker.dismiss(animated: true, completion: nil)
             }
         }
-
     }
-    
 }
