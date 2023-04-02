@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -28,7 +27,7 @@
                                     <constraint firstAttribute="height" constant="50" id="wcM-PK-M7T"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nz6-eR-VJb">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nz6-eR-VJb" customClass="ShadowView" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="41.5" y="282.5" width="331" height="331"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="xbv-68-AWW">
@@ -215,6 +214,7 @@
                         <outlet property="bottomRightView" destination="UcW-LQ-tcI" id="Wux-ig-lj8"/>
                         <outlet property="leftBtn" destination="MS6-qe-I9d" id="j6y-4p-Jy4"/>
                         <outlet property="middleBtn" destination="EtL-BE-wHT" id="Bns-mH-QG6"/>
+                        <outlet property="photosView" destination="nz6-eR-VJb" id="F2H-w1-fVf"/>
                         <outlet property="rightBtn" destination="mBQ-bH-Hyp" id="zJh-Tg-6Mc"/>
                         <outlet property="swipeUpLbl" destination="Ibm-TL-BSj" id="mv1-tE-qyE"/>
                         <outlet property="topLeftView" destination="PmD-Vj-skv" id="AxH-vf-o5Z"/>

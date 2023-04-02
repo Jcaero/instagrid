@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomRightView: UIView!
     @IBOutlet weak var swipeUpLbl: UILabel!
     @IBOutlet weak var arrowIV: UIImageView!
+    @IBOutlet weak var photosView: ShadowView!
     
     override func viewDidLoad() {
         super.viewDidLoad()

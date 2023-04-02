@@ -1,8 +1,8 @@
 //
-//  layoutButton.swift
+//  UIButton.swift
 //  Instagrid
 //
-//  Created by pierrick viret on 30/03/2023.
+//  Created by pierrick viret on 02/04/2023.
 //
 
 import UIKit
@@ -19,5 +19,4 @@ extension UIButton {
     func notShowCheck(){
         self.setImage(nil, for: .normal)
     }
-
 }
