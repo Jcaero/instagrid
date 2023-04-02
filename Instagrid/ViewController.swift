@@ -18,14 +18,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var topRightView: UIView!
     @IBOutlet weak var bottomLeftView: UIView!
     @IBOutlet weak var bottomRightView: UIView!
-    
-   // override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-
-   // }
+    @IBOutlet weak var swipeUpLbl: UILabel!
+    @IBOutlet weak var arrowIV: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedLayout(index: 1)
+    }
+
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isLandscape {
+            swipeUpLbl.text = "Swipe left to share"
+            arrowIV.image = UIImage(named: "Arrow Left")
+        }else {
+            swipeUpLbl.text = "Swipe up to share"
+            arrowIV.image = UIImage(named: "Arrow Up")
+        }
     }
     
     @IBAction func modifieLayout(_ sender: UIButton) {
