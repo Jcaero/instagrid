@@ -9,14 +9,14 @@ import UIKit
 
 extension UIButton {
 
-    func showCheck(){
+    func showCheck() {
         let image = UIImage(named: "Selected")
         self.setImage(image, for: .normal)
         self.contentVerticalAlignment = .fill
         self.contentHorizontalAlignment = .fill
     }
 
-    func notShowCheck(){
+    func notShowCheck() {
         self.setImage(nil, for: .normal)
     }
 }

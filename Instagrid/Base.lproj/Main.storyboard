@@ -38,11 +38,45 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PmD-Vj-skv">
                                                         <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9tV-mH-xrV">
+                                                                <rect key="frame" x="50" y="50" width="43" height="43"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="9tV-mH-xrV" secondAttribute="height" multiplier="1:1" id="oeD-WB-peI"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain">
+                                                                    <backgroundConfiguration key="background" image="Plus"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                        </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="9tV-mH-xrV" firstAttribute="centerX" secondItem="PmD-Vj-skv" secondAttribute="centerX" id="fTF-yb-vMW"/>
+                                                            <constraint firstItem="9tV-mH-xrV" firstAttribute="centerY" secondItem="PmD-Vj-skv" secondAttribute="centerY" id="icU-JB-t07"/>
+                                                            <constraint firstItem="9tV-mH-xrV" firstAttribute="height" secondItem="PmD-Vj-skv" secondAttribute="height" multiplier="0.3" id="oBH-hq-vcT"/>
+                                                        </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXh-V2-CIM">
                                                         <rect key="frame" x="158" y="0.0" width="143" height="143"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tKD-jh-J5u">
+                                                                <rect key="frame" x="50" y="50" width="43" height="43"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="tKD-jh-J5u" secondAttribute="height" multiplier="1:1" id="J5l-x1-TbL"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain">
+                                                                    <backgroundConfiguration key="background" image="Plus"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                        </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="tKD-jh-J5u" firstAttribute="height" secondItem="rXh-V2-CIM" secondAttribute="height" multiplier="0.3" id="Ggc-xs-k9I"/>
+                                                            <constraint firstItem="tKD-jh-J5u" firstAttribute="centerY" secondItem="rXh-V2-CIM" secondAttribute="centerY" id="TpO-VG-87e"/>
+                                                            <constraint firstItem="tKD-jh-J5u" firstAttribute="centerX" secondItem="rXh-V2-CIM" secondAttribute="centerX" id="X4N-jC-qDm"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                             </stackView>
@@ -51,11 +85,45 @@
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZrF-qm-Rkn">
                                                         <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8tl-wI-eho">
+                                                                <rect key="frame" x="50" y="50" width="43" height="43"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="8tl-wI-eho" secondAttribute="height" multiplier="1:1" id="D1Q-Hy-fXx"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain">
+                                                                    <backgroundConfiguration key="background" image="Plus"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                        </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="8tl-wI-eho" firstAttribute="height" secondItem="ZrF-qm-Rkn" secondAttribute="height" multiplier="0.3" id="lKb-8X-DLK"/>
+                                                            <constraint firstItem="8tl-wI-eho" firstAttribute="centerY" secondItem="ZrF-qm-Rkn" secondAttribute="centerY" id="rcH-hy-VNf"/>
+                                                            <constraint firstItem="8tl-wI-eho" firstAttribute="centerX" secondItem="ZrF-qm-Rkn" secondAttribute="centerX" id="t4F-cw-uB0"/>
+                                                        </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UcW-LQ-tcI">
                                                         <rect key="frame" x="158" y="0.0" width="143" height="143"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vm-6G-V8w">
+                                                                <rect key="frame" x="50" y="50" width="43" height="43"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="1vm-6G-V8w" secondAttribute="height" multiplier="1:1" id="G0q-rs-XDI"/>
+                                                                </constraints>
+                                                                <state key="normal" title="Button"/>
+                                                                <buttonConfiguration key="configuration" style="plain">
+                                                                    <backgroundConfiguration key="background" image="Plus"/>
+                                                                </buttonConfiguration>
+                                                            </button>
+                                                        </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstItem="1vm-6G-V8w" firstAttribute="height" secondItem="UcW-LQ-tcI" secondAttribute="height" multiplier="0.3" id="1G8-ho-EAV"/>
+                                                            <constraint firstItem="1vm-6G-V8w" firstAttribute="centerY" secondItem="UcW-LQ-tcI" secondAttribute="centerY" id="X1C-dF-ZGg"/>
+                                                            <constraint firstItem="1vm-6G-V8w" firstAttribute="centerX" secondItem="UcW-LQ-tcI" secondAttribute="centerX" id="axd-i7-xDQ"/>
+                                                        </constraints>
                                                     </view>
                                                 </subviews>
                                             </stackView>
@@ -232,6 +300,7 @@
         <image name="Layout 1" width="27" height="27"/>
         <image name="Layout 2" width="27" height="27"/>
         <image name="Layout 3" width="27" height="27"/>
+        <image name="Plus" width="13.5" height="13.5"/>
         <image name="Selected" width="27" height="27"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

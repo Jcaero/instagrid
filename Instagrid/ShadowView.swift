@@ -12,13 +12,13 @@ class ShadowView: UIView {
         super.init(frame: frame)
         setup()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
-    
-    private func setup(){
+
+    private func setup() {
     layer.shadowColor = UIColor.black.cgColor
     layer.shadowRadius = 1
     layer.shadowOffset = CGSize(width: 3, height: 3)

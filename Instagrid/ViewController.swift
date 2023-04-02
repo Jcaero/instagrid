@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var swipeUpLbl: UILabel!
     @IBOutlet weak var arrowIV: UIImageView!
     @IBOutlet weak var photosView: ShadowView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedLayout(index: 1)
@@ -31,20 +31,20 @@ class ViewController: UIViewController {
         if UIDevice.current.orientation.isLandscape {
             swipeUpLbl.text = "Swipe left to share"
             arrowIV.image = UIImage(named: "Arrow Left")
-        }else {
+        } else {
             swipeUpLbl.text = "Swipe up to share"
             arrowIV.image = UIImage(named: "Arrow Up")
         }
     }
-    
+
     @IBAction func modifieLayout(_ sender: UIButton) {
         selectedLayout(index: sender.tag)
     }
 
     // display selected image behind the right Layout button
-    private func selectedLayout(index: Int){
+    private func selectedLayout(index: Int) {
         resetView()
-        
+
         switch index {
         case 0:
             leftBtn.showCheck()
@@ -60,7 +60,7 @@ class ViewController: UIViewController {
         default : break
         }
     }
-    
+
     // reset view
     private func resetView() {
         [leftBtn, middleBtn, rightBtn].forEach {
@@ -71,6 +71,3 @@ class ViewController: UIViewController {
     }
 
 }
-
-
-
