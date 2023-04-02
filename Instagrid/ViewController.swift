@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhotosUI
 
 // UIImagePickerViewController
 // CGAffine
@@ -21,10 +22,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var swipeUpLbl: UILabel!
     @IBOutlet weak var arrowIV: UIImageView!
     @IBOutlet weak var photosView: ShadowView!
-
+    @IBOutlet weak var topLeftBtn: UIButton!
+    
+    var libraryPicker: PHPickerViewController?
+    var viewSelected: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedLayout(index: 1)
+        setupLibrary()
     }
 
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
@@ -69,5 +75,43 @@ class ViewController: UIViewController {
         bottomRightView.isHidden = false
         topRightView.isHidden = false
     }
+    @IBAction func selectedImage(_ sender: UIButton) {
+        viewSelected = sender.tag
+        present(libraryPicker!, animated: true,completion: nil)
+    }
+    
+}
 
+extension ViewController : PHPickerViewControllerDelegate {
+    
+    func setupLibrary() {
+        var configuration = PHPickerConfiguration()
+        configuration.filter = .images
+        configuration.selectionLimit = 1
+        configuration.preferredAssetRepresentationMode = .automatic
+        libraryPicker = PHPickerViewController(configuration: configuration)
+        libraryPicker?.delegate = self
+    }
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        guard let first = results.first else { return }
+        let newPhotoProvider = first.itemProvider
+        guard newPhotoProvider.canLoadObject(ofClass: UIImage.self) else { return }
+        newPhotoProvider.loadObject(ofClass: UIImage.self) { image, error in
+            DispatchQueue.main.async {
+                if let e = error {
+                    print(e.localizedDescription)
+                }
+                guard let newImage = image as? UIImage else { return }
+                switch self.viewSelected {
+                case 1: self.topLeftBtn.setImage(newImage, for: .normal)
+                default: print("image non ok")
+                }
+                picker.dismiss(animated: true, completion: nil)
+            }
+        }
+
+    }
+    
 }
