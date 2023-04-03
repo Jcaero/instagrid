@@ -52,7 +52,7 @@
                                                                     <action selector="selectedImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ag4-1T-jiH"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YGn-1T-bLo">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YGn-1T-bLo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
                                                                 <accessibility key="accessibilityConfiguration">
                                                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
@@ -330,6 +330,7 @@
                         <outlet property="photosView" destination="nz6-eR-VJb" id="F2H-w1-fVf"/>
                         <outlet property="rightBtn" destination="mBQ-bH-Hyp" id="zJh-Tg-6Mc"/>
                         <outlet property="swipeUpLbl" destination="Ibm-TL-BSj" id="mv1-tE-qyE"/>
+                        <outlet property="topLeftBtn" destination="9tV-mH-xrV" id="ffS-zz-h2s"/>
                         <outlet property="topLeftIV" destination="YGn-1T-bLo" id="sF4-xv-cU7"/>
                         <outlet property="topLeftView" destination="PmD-Vj-skv" id="AxH-vf-o5Z"/>
                         <outlet property="topRightIV" destination="DBl-aI-CMj" id="xp0-qk-wMr"/>

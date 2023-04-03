@@ -26,6 +26,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var topRightIV: UIImageView!
     @IBOutlet weak var bottomLeftIV: UIImageView!
     @IBOutlet weak var bottomRightIV: UIImageView!
+    @IBOutlet weak var topLeftBtn: UIButton!
     
     var libraryPicker: PHPickerViewController?
     var viewSelected: Int?
@@ -34,8 +35,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         selectedLayout(index: 1)
         setupLibrary()
+        initGesturePhoto()
     }
-
+    
+    // identifie orientation of the device
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isLandscape {
             swipeUpLbl.text = "Swipe left to share"
@@ -78,13 +81,29 @@ class ViewController: UIViewController {
         bottomRightView.isHidden = false
         topRightView.isHidden = false
     }
-    @IBAction func selectedImage(_ sender: UIButton) {
+    // action when touch  cross
+    @IBAction func selectedImage(_ sender: UIView) {
         viewSelected = sender.tag
         present(libraryPicker!, animated: true,completion: nil)
     }
     
 }
 
+    //add gesture recognizer for change picture
+extension ViewController {
+    private func initGesturePhoto() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:)) )
+        topLeftIV.addGestureRecognizer(tap)
+        topLeftIV.isUserInteractionEnabled = true
+    }
+    
+    @objc func imageTapped(_ sender: UITapGestureRecognizer) {
+        viewSelected = sender.view?.tag
+        present(libraryPicker!, animated: true,completion: nil)
+    }
+}
+
+// gesture of library
 extension ViewController : PHPickerViewControllerDelegate {
     
     func setupLibrary() {
@@ -98,10 +117,14 @@ extension ViewController : PHPickerViewControllerDelegate {
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true, completion: nil)
+        
         guard let first = results.first else { return }
         let newPhotoProvider = first.itemProvider
+        
         guard newPhotoProvider.canLoadObject(ofClass: UIImage.self) else { return }
+        
         newPhotoProvider.loadObject(ofClass: UIImage.self) { image, error in
+            
             DispatchQueue.main.async {
                 if let e = error {
                     print(e.localizedDescription)
@@ -109,6 +132,7 @@ extension ViewController : PHPickerViewControllerDelegate {
                 guard let newImage = image as? UIImage else { return }
                 switch self.viewSelected {
                 case 1: self.topLeftIV.image = newImage
+                    self.topLeftBtn.isHidden = true
                 case 2: self.topRightIV.image = newImage
                 case 3: self.bottomLeftIV.image = newImage
                 case 4: self.bottomRightIV.image = newImage
