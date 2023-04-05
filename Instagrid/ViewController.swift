@@ -15,17 +15,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var rightBtn: UIButton!
     @IBOutlet weak var middleBtn: UIButton!
     @IBOutlet weak var leftBtn: UIButton!
+    
     @IBOutlet weak var topLeftView: UIView!
     @IBOutlet weak var topRightView: UIView!
     @IBOutlet weak var bottomLeftView: UIView!
     @IBOutlet weak var bottomRightView: UIView!
+    
     @IBOutlet weak var swipeUpLbl: UILabel!
     @IBOutlet weak var arrowIV: UIImageView!
     @IBOutlet weak var photosView: ShadowView!
+    
     @IBOutlet weak var topLeftIV: UIImageView!
     @IBOutlet weak var topRightIV: UIImageView!
     @IBOutlet weak var bottomLeftIV: UIImageView!
     @IBOutlet weak var bottomRightIV: UIImageView!
+    
     @IBOutlet weak var topLeftBtn: UIButton!
     
     var libraryPicker: PHPickerViewController?
@@ -36,6 +40,7 @@ class ViewController: UIViewController {
         selectedLayout(index: 1)
         setupLibrary()
         initGesturePhoto()
+        initGestureSwipe()
     }
     
     // identifie orientation of the device
@@ -81,50 +86,71 @@ class ViewController: UIViewController {
         bottomRightView.isHidden = false
         topRightView.isHidden = false
     }
+    
     // action when touch  cross
     @IBAction func selectedImage(_ sender: UIView) {
         viewSelected = sender.tag
         present(libraryPicker!, animated: true,completion: nil)
     }
-    
 }
 
     //add gesture recognizer for change picture
 extension ViewController {
     private func initGesturePhoto() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:)) )
+        
         topLeftIV.addGestureRecognizer(tap)
         topLeftIV.isUserInteractionEnabled = true
     }
     
+    // call when a picture is tap for change picture
     @objc func imageTapped(_ sender: UITapGestureRecognizer) {
         viewSelected = sender.view?.tag
         present(libraryPicker!, animated: true,completion: nil)
+    }
+
+    private func initGestureSwipe() {
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(specificService(_:)))
+        swipe.direction = .up
+        self.view.addGestureRecognizer(swipe)
+        self.view.isUserInteractionEnabled = true
+    }
+
+    // convert view in image and show Activity controller
+    @objc func specificService(_ sender: UISwipeGestureRecognizer) {
+        //create image
+        let image = photosView.getImage()
+        var items = [UIImage]()
+        items.append(image)
+        //display UIActivity
+        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(ac, animated: true)
     }
 }
 
 // gesture of library
 extension ViewController : PHPickerViewControllerDelegate {
-    
+
     func setupLibrary() {
         var configuration = PHPickerConfiguration()
         configuration.filter = .images
         configuration.selectionLimit = 1
         configuration.preferredAssetRepresentationMode = .automatic
+        
         libraryPicker = PHPickerViewController(configuration: configuration)
         libraryPicker?.delegate = self
     }
-    
+    // call when user finish with library
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
         picker.dismiss(animated: true, completion: nil)
-        
+
         guard let first = results.first else { return }
         let newPhotoProvider = first.itemProvider
-        
+
         guard newPhotoProvider.canLoadObject(ofClass: UIImage.self) else { return }
-        
+
         newPhotoProvider.loadObject(ofClass: UIImage.self) { image, error in
-            
+
             DispatchQueue.main.async {
                 if let e = error {
                     print(e.localizedDescription)
