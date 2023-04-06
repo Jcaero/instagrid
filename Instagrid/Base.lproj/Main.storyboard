@@ -27,6 +27,84 @@
                                     <constraint firstAttribute="height" constant="50" id="wcM-PK-M7T"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIR-l6-Q8w">
+                                <rect key="frame" x="41.5" y="109" width="331" height="168.5"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-1U-hfV">
+                                        <rect key="frame" x="155.5" y="98.5" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="PkB-GJ-5AQ"/>
+                                            <constraint firstAttribute="width" secondItem="ZK4-1U-hfV" secondAttribute="height" multiplier="1:1" id="ioi-HC-Rmh"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ibm-TL-BSj">
+                                        <rect key="frame" x="0.0" y="123.5" width="331" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="je4-l6-xwl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Delm-Regular" family="Delm" pointSize="27"/>
+                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.71362143749999996" green="0.84266054629999998" blue="0.89726132150000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Ibm-TL-BSj" firstAttribute="centerX" secondItem="lIR-l6-Q8w" secondAttribute="centerX" id="8mT-0T-eLV"/>
+                                    <constraint firstItem="Ibm-TL-BSj" firstAttribute="width" secondItem="lIR-l6-Q8w" secondAttribute="width" id="EEn-SY-xqf"/>
+                                    <constraint firstItem="ZK4-1U-hfV" firstAttribute="centerX" secondItem="lIR-l6-Q8w" secondAttribute="centerX" id="Wqf-Nl-T0J"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ibm-TL-BSj" secondAttribute="bottom" constant="5" id="eMX-dA-jyy"/>
+                                    <constraint firstItem="Ibm-TL-BSj" firstAttribute="top" secondItem="ZK4-1U-hfV" secondAttribute="bottom" constant="5" id="lf8-Cq-sFQ"/>
+                                    <constraint firstItem="Ibm-TL-BSj" firstAttribute="centerY" secondItem="lIR-l6-Q8w" secondAttribute="centerY" id="uQR-40-jQj"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="uQR-40-jQj"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="eMX-dA-jyy"/>
+                                        <include reference="uQR-40-jQj"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vju-B8-gNq">
+                                <rect key="frame" x="41.5" y="755" width="331" height="97"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" preferredBehavioralStyle="pad" translatesAutoresizingMaskIntoConstraints="NO" id="MS6-qe-I9d" customClass="layoutButton" customModule="Instagrid" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="97" height="97"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MS6-qe-I9d" secondAttribute="height" multiplier="1:1" id="PkP-C7-V4I"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="" backgroundImage="Layout 1"/>
+                                        <connections>
+                                            <action selector="modifieLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovh-wJ-jRY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtL-BE-wHT" customClass="layoutButton" customModule="Instagrid" customModuleProvider="target">
+                                        <rect key="frame" x="117" y="0.0" width="97" height="97"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="Selected" backgroundImage="Layout 2">
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="modifieLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ID-Ec-v2l"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBQ-bH-Hyp" customClass="layoutButton" customModule="Instagrid" customModuleProvider="target">
+                                        <rect key="frame" x="234" y="0.0" width="97" height="97"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" backgroundImage="Layout 3">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="modifieLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Zu-Gc-w7R"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <variation key="heightClass=compact" axis="vertical"/>
+                            </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nz6-eR-VJb" customClass="ShadowView" customModule="Instagrid" customModuleProvider="target">
                                 <rect key="frame" x="41.5" y="282.5" width="331" height="331"/>
                                 <subviews>
@@ -52,7 +130,7 @@
                                                                     <action selector="selectedImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ag4-1T-jiH"/>
                                                                 </connections>
                                                             </button>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YGn-1T-bLo">
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YGn-1T-bLo">
                                                                 <rect key="frame" x="0.0" y="0.0" width="143" height="143"/>
                                                                 <accessibility key="accessibilityConfiguration">
                                                                     <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
@@ -69,6 +147,11 @@
                                                             <constraint firstAttribute="trailing" secondItem="YGn-1T-bLo" secondAttribute="trailing" id="wMT-x5-zfL"/>
                                                             <constraint firstItem="YGn-1T-bLo" firstAttribute="leading" secondItem="PmD-Vj-skv" secondAttribute="leading" id="zew-Mh-64u"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="subviews">
+                                                                <exclude reference="9tV-mH-xrV"/>
+                                                            </mask>
+                                                        </variation>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rXh-V2-CIM">
                                                         <rect key="frame" x="158" y="0.0" width="143" height="143"/>
@@ -182,84 +265,6 @@
                                     <constraint firstItem="xbv-68-AWW" firstAttribute="leading" secondItem="nz6-eR-VJb" secondAttribute="leading" constant="15" id="x0a-8u-wh3"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIR-l6-Q8w">
-                                <rect key="frame" x="41.5" y="109" width="331" height="168.5"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="ZK4-1U-hfV">
-                                        <rect key="frame" x="155.5" y="98.5" width="20" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="20" id="PkB-GJ-5AQ"/>
-                                            <constraint firstAttribute="width" secondItem="ZK4-1U-hfV" secondAttribute="height" multiplier="1:1" id="ioi-HC-Rmh"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ibm-TL-BSj">
-                                        <rect key="frame" x="0.0" y="123.5" width="331" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="je4-l6-xwl"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Delm-Regular" family="Delm" pointSize="27"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.71362143749999996" green="0.84266054629999998" blue="0.89726132150000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstItem="Ibm-TL-BSj" firstAttribute="centerX" secondItem="lIR-l6-Q8w" secondAttribute="centerX" id="8mT-0T-eLV"/>
-                                    <constraint firstItem="Ibm-TL-BSj" firstAttribute="width" secondItem="lIR-l6-Q8w" secondAttribute="width" id="EEn-SY-xqf"/>
-                                    <constraint firstItem="ZK4-1U-hfV" firstAttribute="centerX" secondItem="lIR-l6-Q8w" secondAttribute="centerX" id="Wqf-Nl-T0J"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ibm-TL-BSj" secondAttribute="bottom" constant="5" id="eMX-dA-jyy"/>
-                                    <constraint firstItem="Ibm-TL-BSj" firstAttribute="top" secondItem="ZK4-1U-hfV" secondAttribute="bottom" constant="5" id="lf8-Cq-sFQ"/>
-                                    <constraint firstItem="Ibm-TL-BSj" firstAttribute="centerY" secondItem="lIR-l6-Q8w" secondAttribute="centerY" id="uQR-40-jQj"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="uQR-40-jQj"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="eMX-dA-jyy"/>
-                                        <include reference="uQR-40-jQj"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vju-B8-gNq">
-                                <rect key="frame" x="41.5" y="755" width="331" height="97"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" preferredBehavioralStyle="pad" translatesAutoresizingMaskIntoConstraints="NO" id="MS6-qe-I9d" customClass="layoutButton" customModule="Instagrid" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="97" height="97"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="MS6-qe-I9d" secondAttribute="height" multiplier="1:1" id="PkP-C7-V4I"/>
-                                        </constraints>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="" backgroundImage="Layout 1"/>
-                                        <connections>
-                                            <action selector="modifieLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ovh-wJ-jRY"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EtL-BE-wHT" customClass="layoutButton" customModule="Instagrid" customModuleProvider="target">
-                                        <rect key="frame" x="117" y="0.0" width="97" height="97"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" image="Selected" backgroundImage="Layout 2">
-                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="modifieLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9ID-Ec-v2l"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBQ-bH-Hyp" customClass="layoutButton" customModule="Instagrid" customModuleProvider="target">
-                                        <rect key="frame" x="234" y="0.0" width="97" height="97"/>
-                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" backgroundImage="Layout 3">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="modifieLayout:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Zu-Gc-w7R"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <variation key="heightClass=compact" axis="vertical"/>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.71362143749999996" green="0.84266054629999998" blue="0.89726132150000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

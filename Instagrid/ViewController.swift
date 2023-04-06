@@ -34,23 +34,48 @@ class ViewController: UIViewController {
     
     var libraryPicker: PHPickerViewController?
     var viewSelected: Int?
-    
+    var deplacementValue: CGFloat = 0
+    var transformX: CGFloat = 0
+    var transformY: CGFloat = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         selectedLayout(index: 1)
+        initTransformValue()
+        updateOrientation()
         setupLibrary()
         initGesturePhoto()
         initGestureSwipe()
     }
     
+    private func initTransformValue() {
+        let height = UIScreen.main.bounds.height
+        let width = UIScreen.main.bounds.width
+        
+        if height>width {
+            deplacementValue = -height
+        }else {
+            deplacementValue = -width
+        }
+    }
+    
     // identifie orientation of the device
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+       updateOrientation()
+    }
+    
+    private func updateOrientation() {
         if UIDevice.current.orientation.isLandscape {
             swipeUpLbl.text = "Swipe left to share"
             arrowIV.image = UIImage(named: "Arrow Left")
+            transformX = deplacementValue
+            transformY = 0
+            
         } else {
             swipeUpLbl.text = "Swipe up to share"
             arrowIV.image = UIImage(named: "Arrow Up")
+            transformX = 0
+            transformY = deplacementValue
         }
     }
 
@@ -108,6 +133,10 @@ extension ViewController {
         viewSelected = sender.view?.tag
         present(libraryPicker!, animated: true,completion: nil)
     }
+}
+
+    // UIactivity gestion
+extension ViewController {
 
     private func initGestureSwipe() {
         let swipe = UISwipeGestureRecognizer(target: self, action: #selector(specificService(_:)))
@@ -122,9 +151,27 @@ extension ViewController {
         let image = photosView.getImage()
         var items = [UIImage]()
         items.append(image)
-        //display UIActivity
-        let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-        present(ac, animated: true)
+        
+        // animation
+        let translationTransform = CGAffineTransform(translationX: transformX , y: transformY)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.photosView.transform = translationTransform
+        } completion: { (finish) in
+            if finish {
+                //display UIActivity
+                let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
+                self.present(ac, animated: true)
+                
+                // display view when UIActivity finish
+                ac.completionWithItemsHandler = {(activity, success, items, error) in
+                    let translationTransform = CGAffineTransform(translationX: 0 , y: 0)
+                    UIView.animate(withDuration: 0.3) {
+                        self.photosView.transform = translationTransform
+                    }
+                }
+            }
+        }
     }
 }
 
