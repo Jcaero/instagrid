@@ -8,10 +8,7 @@
 import UIKit
 import PhotosUI
 
-// UIImagePickerViewController
-// CGAffine
-
-class ViewController: UIViewController {
+class ViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var rightBtn: UIButton!
     @IBOutlet weak var middleBtn: UIButton!
     @IBOutlet weak var leftBtn: UIButton!
@@ -30,53 +27,63 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomLeftIV: UIImageView!
     @IBOutlet weak var bottomRightIV: UIImageView!
     
-    @IBOutlet weak var topLeftBtn: UIButton!
-    
-    var libraryPicker: PHPickerViewController?
-    var viewSelected: Int?
+    var imagePicker = UIImagePickerController()
+    var viewSelected: Int = 1
     
     var deplacementValue: CGFloat = 0
     var transformX: CGFloat = 0
     var transformY: CGFloat = 0
+    
+    var swipeGesture = UISwipeGestureRecognizer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        selectedLayout(index: 1)
-        initTransformValue()
-        updateOrientation()
-        setupLibrary()
-        initGesturePhoto()
-        initGestureSwipe()
-    }
-    
-    private func initTransformValue() {
+        // init transform value
         let height = UIScreen.main.bounds.height
         let width = UIScreen.main.bounds.width
         
-        if height>width {
-            deplacementValue = -height
-        }else {
-            deplacementValue = -width
-        }
+        deplacementValue = height>width ? -height : -width
+        
+        // setup library
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
+        
+        initGestureSwipe()
+        
+        selectedLayout(index: 1)
+        updateOrientation()
+    }
+
+    private func initGestureSwipe() {
+        swipeGesture = UISwipeGestureRecognizer(target: self,
+                                                action: #selector(specificService(_:)))
+        swipeGesture.direction = .up
+        self.view.addGestureRecognizer(swipeGesture)
+        self.view.isUserInteractionEnabled = true
     }
     
     // identifie orientation of the device
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
-       updateOrientation()
+        updateOrientation()
     }
     
     private func updateOrientation() {
-        if UIDevice.current.orientation.isLandscape {
-            swipeUpLbl.text = "Swipe left to share"
-            arrowIV.image = UIImage(named: "Arrow Left")
-            transformX = deplacementValue
-            transformY = 0
-            
-        } else {
+        switch UIDevice.current.orientation {
+        case .portrait, .faceUp, .faceDown, .portraitUpsideDown, .unknown:
             swipeUpLbl.text = "Swipe up to share"
             arrowIV.image = UIImage(named: "Arrow Up")
             transformX = 0
             transformY = deplacementValue
+            swipeGesture.direction = .up
+            
+        case .landscapeLeft, .landscapeRight:
+            swipeUpLbl.text = "Swipe left to share"
+            arrowIV.image = UIImage(named: "Arrow Left")
+            transformX = deplacementValue
+            transformY = 0
+            swipeGesture.direction = .left
+            
+        default: break
         }
     }
 
@@ -87,23 +94,23 @@ class ViewController: UIViewController {
     // display selected image behind the right Layout button
     private func selectedLayout(index: Int) {
         resetView()
-
+        
         switch index {
         case 0:
             leftBtn.showCheck()
             topRightView.isHidden = true
-
+            
         case 1:
             middleBtn.showCheck()
             bottomRightView.isHidden = true
-
+            
         case 2:
             rightBtn.showCheck()
-
+            
         default : break
         }
     }
-
+    
     // reset view
     private func resetView() {
         [leftBtn, middleBtn, rightBtn].forEach {
@@ -113,125 +120,61 @@ class ViewController: UIViewController {
         topRightView.isHidden = false
     }
     
-    // action when touch  cross
-    @IBAction func selectedImage(_ sender: UIView) {
+    // action when touch
+    @IBAction func selectedImage(_ sender: UIButton) {
         viewSelected = sender.tag
-        present(libraryPicker!, animated: true,completion: nil)
+        present(imagePicker, animated: true,completion: nil)
     }
 }
 
-    //add gesture recognizer for change picture
-extension ViewController {
-    private func initGesturePhoto() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(imageTapped(_:)) )
-        
-        topLeftIV.addGestureRecognizer(tap)
-        topLeftIV.isUserInteractionEnabled = true
-    }
+// gesture of library
+extension ViewController: UIImagePickerControllerDelegate {
     
-    // call when a picture is tap for change picture
-    @objc func imageTapped(_ sender: UITapGestureRecognizer) {
-        viewSelected = sender.view?.tag
-        present(libraryPicker!, animated: true,completion: nil)
+    // call when user finish with library
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[.originalImage] as? UIImage else { return }
+        
+        switch self.viewSelected {
+        case 1: self.topLeftIV.image = image
+        case 2: self.topRightIV.image = image
+        case 3: self.bottomLeftIV.image = image
+        case 4: self.bottomRightIV.image = image
+        default: print("image non ok")
+        }
     }
 }
-
-    // UIactivity gestion
+// UIactivity gestion
 extension ViewController {
-    private func initGestureSwipe() {
-        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(specificService(_:)))
-        swipeUp.direction = .up
-        
-        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(specificService(_:)))
-        swipeLeft.direction = .left
-        
-        self.view.addGestureRecognizer(swipeUp)
-        self.view.addGestureRecognizer(swipeLeft)
-        
-        self.view.isUserInteractionEnabled = true
-    }
-
-    // convert view in image and show Activity controller
+    
     @objc func specificService(_ sender: UISwipeGestureRecognizer) {
-        
-        let valideSwipe = checkSwipeValide(sender: sender)
-        guard valideSwipe else {return}
-        
-        //create image
-        let image = photosView.getImage()
-        var items = [UIImage]()
-        items.append(image)
-        
         // animation
         let translationTransform = CGAffineTransform(translationX: transformX , y: transformY)
         
         UIView.animate(withDuration: 0.3) {
             self.photosView.transform = translationTransform
-        } completion: { (finish) in
-            if finish {
-                //display UIActivity
-                let ac = UIActivityViewController(activityItems: items, applicationActivities: nil)
-                self.present(ac, animated: true)
-                
-                // display view when UIActivity finish
-                ac.completionWithItemsHandler = {(activity, success, items, error) in
-                    let translationTransform = CGAffineTransform(translationX: 0 , y: 0)
-                    UIView.animate(withDuration: 0.3) {
-                        self.photosView.transform = translationTransform
-                    }
-                }
-            }
+        } completion: { finish in
+            if finish == false { return }
+            self.presentActivityController()
         }
     }
     
-    // verifie if swipe is in good direction
-    private func checkSwipeValide(sender: UISwipeGestureRecognizer) -> Bool {
+    private func presentActivityController() {
+        let image = photosView.getImage()
         
-        let swipeUpValidate = (sender.direction == .up) && UIDevice.current.orientation.isPortrait
-        let swipeLeftValidate = (sender.direction == .left) && (UIDevice.current.orientation.isLandscape)
+        //display UIActivity
+        let ac = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        self.present(ac, animated: true)
         
-        return swipeUpValidate || swipeLeftValidate
-    }
-}
-
-
-// gesture of library
-extension ViewController : PHPickerViewControllerDelegate {
-
-    func setupLibrary() {
-        var configuration = PHPickerConfiguration()
-        configuration.filter = .images
-        configuration.selectionLimit = 1
-        configuration.preferredAssetRepresentationMode = .automatic
-        
-        libraryPicker = PHPickerViewController(configuration: configuration)
-        libraryPicker?.delegate = self
-    }
-    // call when user finish with library
-    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        picker.dismiss(animated: true, completion: nil)
-
-        guard let first = results.first else { return }
-        let newPhotoProvider = first.itemProvider
-
-        guard newPhotoProvider.canLoadObject(ofClass: UIImage.self) else { return }
-
-        newPhotoProvider.loadObject(ofClass: UIImage.self) { image, error in
-
-            DispatchQueue.main.async {
-                if let e = error {
-                    print(e.localizedDescription)
-                }
-                guard let newImage = image as? UIImage else { return }
-                switch self.viewSelected {
-                case 1: self.topLeftIV.image = newImage
-                    self.topLeftBtn.isHidden = true
-                case 2: self.topRightIV.image = newImage
-                case 3: self.bottomLeftIV.image = newImage
-                case 4: self.bottomRightIV.image = newImage
-                default: print("image non ok")
-                }
+        // display view when UIActivity finish
+        ac.completionWithItemsHandler = {(activity, success, items, error) in
+            UIView.animate(withDuration: 0.3) {
+                self.photosView.transform = CGAffineTransform(translationX: 0 , y: 0)
             }
         }
     }
 }
+
+
+
