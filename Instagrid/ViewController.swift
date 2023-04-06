@@ -34,6 +34,7 @@ class ViewController: UIViewController {
     
     var libraryPicker: PHPickerViewController?
     var viewSelected: Int?
+    
     var deplacementValue: CGFloat = 0
     var transformX: CGFloat = 0
     var transformY: CGFloat = 0
@@ -137,16 +138,25 @@ extension ViewController {
 
     // UIactivity gestion
 extension ViewController {
-
     private func initGestureSwipe() {
-        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(specificService(_:)))
-        swipe.direction = .up
-        self.view.addGestureRecognizer(swipe)
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(specificService(_:)))
+        swipeUp.direction = .up
+        
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(specificService(_:)))
+        swipeLeft.direction = .left
+        
+        self.view.addGestureRecognizer(swipeUp)
+        self.view.addGestureRecognizer(swipeLeft)
+        
         self.view.isUserInteractionEnabled = true
     }
 
     // convert view in image and show Activity controller
     @objc func specificService(_ sender: UISwipeGestureRecognizer) {
+        
+        let valideSwipe = checkSwipeValide(sender: sender)
+        guard valideSwipe else {return}
+        
         //create image
         let image = photosView.getImage()
         var items = [UIImage]()
@@ -173,7 +183,17 @@ extension ViewController {
             }
         }
     }
+    
+    // verifie if swipe is in good direction
+    private func checkSwipeValide(sender: UISwipeGestureRecognizer) -> Bool {
+        
+        let swipeUpValidate = (sender.direction == .up) && UIDevice.current.orientation.isPortrait
+        let swipeLeftValidate = (sender.direction == .left) && (UIDevice.current.orientation.isLandscape)
+        
+        return swipeUpValidate || swipeLeftValidate
+    }
 }
+
 
 // gesture of library
 extension ViewController : PHPickerViewControllerDelegate {
