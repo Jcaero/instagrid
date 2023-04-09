@@ -17,7 +17,7 @@
 		4795406529D58EE900D2479B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4795406329D58EE900D2479B /* LaunchScreen.storyboard */; };
 		4795406D29D58F1E00D2479B /* Thirsty-Soft-W01-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4795406C29D58F1E00D2479B /* Thirsty-Soft-W01-Regular.ttf */; };
 		4795406F29D58F2900D2479B /* Delm-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4795406E29D58F2900D2479B /* Delm-Regular.ttf */; };
-		47F8B4F329DB546400F4E598 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47F8B4F229DB546400F4E598 /* View.swift */; };
+		47B2AE0829DF57BB008B86FF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B2AE0729DF57BB008B86FF /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		4795406629D58EE900D2479B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4795406C29D58F1E00D2479B /* Thirsty-Soft-W01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Thirsty-Soft-W01-Regular.ttf"; path = "../../donnée/Thirsty-Soft-W01-Regular.ttf"; sourceTree = "<group>"; };
 		4795406E29D58F2900D2479B /* Delm-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Regular.ttf"; path = "../../donnée/Delm-Regular.ttf"; sourceTree = "<group>"; };
-		47F8B4F229DB546400F4E598 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		47B2AE0729DF57BB008B86FF /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +69,8 @@
 				4795405829D58EE700D2479B /* AppDelegate.swift */,
 				4795405A29D58EE700D2479B /* SceneDelegate.swift */,
 				4795405C29D58EE700D2479B /* ViewController.swift */,
-				47F8B4F229DB546400F4E598 /* View.swift */,
 				4750983F29D9B46000399E93 /* UIButton.swift */,
+				47B2AE0729DF57BB008B86FF /* UIView.swift */,
 				4750984129D9B58B00399E93 /* ShadowView.swift */,
 				4795405E29D58EE700D2479B /* Main.storyboard */,
 				4795406129D58EE900D2479B /* Assets.xcassets */,
@@ -157,7 +157,7 @@
 			files = (
 				4750984229D9B58B00399E93 /* ShadowView.swift in Sources */,
 				4795405D29D58EE700D2479B /* ViewController.swift in Sources */,
-				47F8B4F329DB546400F4E598 /* View.swift in Sources */,
+				47B2AE0829DF57BB008B86FF /* UIView.swift in Sources */,
 				4795405929D58EE700D2479B /* AppDelegate.swift in Sources */,
 				4795405B29D58EE700D2479B /* SceneDelegate.swift in Sources */,
 				4750984029D9B46000399E93 /* UIButton.swift in Sources */,

@@ -1,11 +1,10 @@
 //
-//  View.swift
+//  UIView.swift
 //  Instagrid
 //
-//  Created by pierrick viret on 03/04/2023.
+//  Created by pierrick viret on 06/04/2023.
 //
 
-import Foundation
 import UIKit
 
 extension UIView {
