@@ -33,6 +33,8 @@
 		4795406629D58EE900D2479B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4795406C29D58F1E00D2479B /* Thirsty-Soft-W01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Thirsty-Soft-W01-Regular.ttf"; path = "../../donnée/Thirsty-Soft-W01-Regular.ttf"; sourceTree = "<group>"; };
 		4795406E29D58F2900D2479B /* Delm-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Regular.ttf"; path = "../../donnée/Delm-Regular.ttf"; sourceTree = "<group>"; };
+		47B071ED29E5F179005556E4 /* Thirsty-Soft-W01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Thirsty-Soft-W01-Regular.ttf"; sourceTree = "<group>"; };
+		47B071EE29E5F17F005556E4 /* Thirsty-Soft-W01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Thirsty-Soft-W01-Regular.ttf"; path = "../../../donnée/Thirsty-Soft-W01-Regular.ttf"; sourceTree = "<group>"; };
 		47B2AE0729DF57BB008B86FF /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -66,20 +68,46 @@
 		4795405729D58EE700D2479B /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				4795405829D58EE700D2479B /* AppDelegate.swift */,
-				4795405A29D58EE700D2479B /* SceneDelegate.swift */,
-				4795405C29D58EE700D2479B /* ViewController.swift */,
-				4750983F29D9B46000399E93 /* UIButton.swift */,
-				47B2AE0729DF57BB008B86FF /* UIView.swift */,
-				4750984129D9B58B00399E93 /* ShadowView.swift */,
-				4795405E29D58EE700D2479B /* Main.storyboard */,
-				4795406129D58EE900D2479B /* Assets.xcassets */,
-				4795406329D58EE900D2479B /* LaunchScreen.storyboard */,
+				47B071EC29E5F151005556E4 /* Supporting files */,
+				47B071EB29E5F0F7005556E4 /* Controller */,
+				47B071EA29E5F0D6005556E4 /* Vue */,
 				4795406629D58EE900D2479B /* Info.plist */,
 				4795406C29D58F1E00D2479B /* Thirsty-Soft-W01-Regular.ttf */,
 				4795406E29D58F2900D2479B /* Delm-Regular.ttf */,
+				4795406129D58EE900D2479B /* Assets.xcassets */,
 			);
 			path = Instagrid;
+			sourceTree = "<group>";
+		};
+		47B071EA29E5F0D6005556E4 /* Vue */ = {
+			isa = PBXGroup;
+			children = (
+				4795405E29D58EE700D2479B /* Main.storyboard */,
+				4750984129D9B58B00399E93 /* ShadowView.swift */,
+				4750983F29D9B46000399E93 /* UIButton.swift */,
+				47B2AE0729DF57BB008B86FF /* UIView.swift */,
+			);
+			path = Vue;
+			sourceTree = "<group>";
+		};
+		47B071EB29E5F0F7005556E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4795405C29D58EE700D2479B /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		47B071EC29E5F151005556E4 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				4795405829D58EE700D2479B /* AppDelegate.swift */,
+				4795405A29D58EE700D2479B /* SceneDelegate.swift */,
+				4795406329D58EE900D2479B /* LaunchScreen.storyboard */,
+				47B071EE29E5F17F005556E4 /* Thirsty-Soft-W01-Regular.ttf */,
+				47B071ED29E5F179005556E4 /* Thirsty-Soft-W01-Regular.ttf */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
