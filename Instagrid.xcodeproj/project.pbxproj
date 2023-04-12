@@ -15,7 +15,6 @@
 		4795406029D58EE700D2479B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4795405E29D58EE700D2479B /* Main.storyboard */; };
 		4795406229D58EE900D2479B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4795406129D58EE900D2479B /* Assets.xcassets */; };
 		4795406529D58EE900D2479B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4795406329D58EE900D2479B /* LaunchScreen.storyboard */; };
-		4795406F29D58F2900D2479B /* Delm-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4795406E29D58F2900D2479B /* Delm-Regular.ttf */; };
 		47B2AE0829DF57BB008B86FF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B2AE0729DF57BB008B86FF /* UIView.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +30,6 @@
 		4795406129D58EE900D2479B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4795406429D58EE900D2479B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4795406629D58EE900D2479B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4795406E29D58F2900D2479B /* Delm-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Delm-Regular.ttf"; path = "../../donnée/Delm-Regular.ttf"; sourceTree = "<group>"; };
 		47B071ED29E5F179005556E4 /* Thirsty-Soft-W01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Thirsty-Soft-W01-Regular.ttf"; sourceTree = "<group>"; };
 		47B2AE0729DF57BB008B86FF /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,7 +68,6 @@
 				47B071EB29E5F0F7005556E4 /* Controller */,
 				47B071EA29E5F0D6005556E4 /* Vue */,
 				4795406629D58EE900D2479B /* Info.plist */,
-				4795406E29D58F2900D2479B /* Delm-Regular.ttf */,
 				4795406129D58EE900D2479B /* Assets.xcassets */,
 			);
 			path = Instagrid;
@@ -165,7 +162,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4795406F29D58F2900D2479B /* Delm-Regular.ttf in Resources */,
 				4795406529D58EE900D2479B /* LaunchScreen.storyboard in Resources */,
 				4795406229D58EE900D2479B /* Assets.xcassets in Resources */,
 				4795406029D58EE700D2479B /* Main.storyboard in Resources */,
