@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4727634B29E88EF9003EC0BA /* ThirstyRoughRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4727634A29E88EF9003EC0BA /* ThirstyRoughRegular.otf */; };
+		4727634D29E88F14003EC0BA /* Delm-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4727634C29E88F14003EC0BA /* Delm-Regular.ttf */; };
 		4750984029D9B46000399E93 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4750983F29D9B46000399E93 /* UIButton.swift */; };
 		4750984229D9B58B00399E93 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4750984129D9B58B00399E93 /* ShadowView.swift */; };
 		4795405929D58EE700D2479B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795405829D58EE700D2479B /* AppDelegate.swift */; };
-		4795405B29D58EE700D2479B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795405A29D58EE700D2479B /* SceneDelegate.swift */; };
 		4795405D29D58EE700D2479B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4795405C29D58EE700D2479B /* ViewController.swift */; };
-		4795406029D58EE700D2479B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4795405E29D58EE700D2479B /* Main.storyboard */; };
+		4795406029D58EE700D2479B /* ViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4795405E29D58EE700D2479B /* ViewController.storyboard */; };
 		4795406229D58EE900D2479B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4795406129D58EE900D2479B /* Assets.xcassets */; };
 		4795406529D58EE900D2479B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4795406329D58EE900D2479B /* LaunchScreen.storyboard */; };
 		47B2AE0829DF57BB008B86FF /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B2AE0729DF57BB008B86FF /* UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4727634A29E88EF9003EC0BA /* ThirstyRoughRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ThirstyRoughRegular.otf; sourceTree = "<group>"; };
+		4727634C29E88F14003EC0BA /* Delm-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Regular.ttf"; sourceTree = "<group>"; };
 		4750983F29D9B46000399E93 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		4750984129D9B58B00399E93 /* ShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
-		47714BA629E7472B00752733 /* Delm-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Regular.ttf"; sourceTree = "<group>"; };
 		4795405529D58EE700D2479B /* Instagrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instagrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4795405829D58EE700D2479B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4795405A29D58EE700D2479B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		4795405C29D58EE700D2479B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4795405F29D58EE700D2479B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4795405F29D58EE700D2479B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ViewController.storyboard; sourceTree = "<group>"; };
 		4795406129D58EE900D2479B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4795406429D58EE900D2479B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4795406629D58EE900D2479B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		47B071ED29E5F179005556E4 /* Thirsty-Soft-W01-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Thirsty-Soft-W01-Regular.ttf"; sourceTree = "<group>"; };
 		47B2AE0729DF57BB008B86FF /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,11 +64,10 @@
 		4795405729D58EE700D2479B /* Instagrid */ = {
 			isa = PBXGroup;
 			children = (
-				47B071EC29E5F151005556E4 /* Supporting files */,
+				4795405829D58EE700D2479B /* AppDelegate.swift */,
 				47B071EB29E5F0F7005556E4 /* Controller */,
 				47B071EA29E5F0D6005556E4 /* Vue */,
-				4795406629D58EE900D2479B /* Info.plist */,
-				4795406129D58EE900D2479B /* Assets.xcassets */,
+				47B7149229E85A82006D33EF /* Resources */,
 			);
 			path = Instagrid;
 			sourceTree = "<group>";
@@ -76,7 +75,7 @@
 		47B071EA29E5F0D6005556E4 /* Vue */ = {
 			isa = PBXGroup;
 			children = (
-				4795405E29D58EE700D2479B /* Main.storyboard */,
+				4795405E29D58EE700D2479B /* ViewController.storyboard */,
 				4750984129D9B58B00399E93 /* ShadowView.swift */,
 				4750983F29D9B46000399E93 /* UIButton.swift */,
 				47B2AE0729DF57BB008B86FF /* UIView.swift */,
@@ -92,16 +91,24 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		47B071EC29E5F151005556E4 /* Supporting files */ = {
+		47B7149229E85A82006D33EF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4795405829D58EE700D2479B /* AppDelegate.swift */,
-				4795405A29D58EE700D2479B /* SceneDelegate.swift */,
+				4795406129D58EE900D2479B /* Assets.xcassets */,
+				4795406629D58EE900D2479B /* Info.plist */,
+				47B7149329E85A8F006D33EF /* Fonts */,
 				4795406329D58EE900D2479B /* LaunchScreen.storyboard */,
-				47B071ED29E5F179005556E4 /* Thirsty-Soft-W01-Regular.ttf */,
-				47714BA629E7472B00752733 /* Delm-Regular.ttf */,
 			);
-			path = "Supporting files";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		47B7149329E85A8F006D33EF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4727634A29E88EF9003EC0BA /* ThirstyRoughRegular.otf */,
+				4727634C29E88F14003EC0BA /* Delm-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,9 +169,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4727634D29E88F14003EC0BA /* Delm-Regular.ttf in Resources */,
+				4727634B29E88EF9003EC0BA /* ThirstyRoughRegular.otf in Resources */,
 				4795406529D58EE900D2479B /* LaunchScreen.storyboard in Resources */,
 				4795406229D58EE900D2479B /* Assets.xcassets in Resources */,
-				4795406029D58EE700D2479B /* Main.storyboard in Resources */,
+				4795406029D58EE700D2479B /* ViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,7 +188,6 @@
 				4795405D29D58EE700D2479B /* ViewController.swift in Sources */,
 				47B2AE0829DF57BB008B86FF /* UIView.swift in Sources */,
 				4795405929D58EE700D2479B /* AppDelegate.swift in Sources */,
-				4795405B29D58EE700D2479B /* SceneDelegate.swift in Sources */,
 				4750984029D9B46000399E93 /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,12 +195,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		4795405E29D58EE700D2479B /* Main.storyboard */ = {
+		4795405E29D58EE700D2479B /* ViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				4795405F29D58EE700D2479B /* Base */,
 			);
-			name = Main.storyboard;
+			name = ViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		4795406329D58EE900D2479B /* LaunchScreen.storyboard */ = {
@@ -330,10 +338,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Instagrid/Info.plist;
+				INFOPLIST_FILE = Instagrid/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = ViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -358,10 +366,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Instagrid/Info.plist;
+				INFOPLIST_FILE = Instagrid/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = ViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;

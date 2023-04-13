@@ -11,8 +11,8 @@
         <array key="Delm-Regular.ttf">
             <string>Delm-Regular</string>
         </array>
-        <array key="Thirsty-Soft-W01-Regular.ttf">
-            <string>ThirstySoftW01-Regular</string>
+        <array key="ThirstyRoughRegular.otf">
+            <string>ThirstyRoughReg</string>
         </array>
     </customFonts>
     <scenes>
@@ -246,11 +246,8 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instagrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGW-XQ-84s">
-                                <rect key="frame" x="10" y="49" width="394" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="xjd-6a-wIN"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ThirstySoftW01-Regular" family="ThirstySoftW01-Regular" pointSize="31"/>
+                                <rect key="frame" x="10" y="49" width="394" height="40.5"/>
+                                <fontDescription key="fontDescription" name="ThirstyRoughReg" family="Thirsty Rough" pointSize="31"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -259,6 +256,7 @@
                         <color key="backgroundColor" red="0.71362143749999996" green="0.84266054629999998" blue="0.89726132150000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vju-B8-gNq" firstAttribute="height" secondItem="nz6-eR-VJb" secondAttribute="height" id="0Je-UL-DaV"/>
+                            <constraint firstItem="nz6-eR-VJb" firstAttribute="leading" secondItem="Ibm-TL-BSj" secondAttribute="trailing" constant="5" id="1ag-bz-355"/>
                             <constraint firstItem="Ibm-TL-BSj" firstAttribute="top" secondItem="ZK4-1U-hfV" secondAttribute="bottom" constant="5" id="1c5-AA-Swq"/>
                             <constraint firstItem="nz6-eR-VJb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="5UI-yN-4vK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vju-B8-gNq" secondAttribute="bottom" constant="10" id="7av-HB-qeV"/>
@@ -288,6 +286,7 @@
                                 <exclude reference="Noi-oY-2RS"/>
                                 <exclude reference="rv7-pf-1cX"/>
                                 <exclude reference="sPh-03-0PI"/>
+                                <exclude reference="1ag-bz-355"/>
                                 <exclude reference="wBI-Qo-Hsw"/>
                                 <exclude reference="QUl-7f-0ba"/>
                                 <exclude reference="0Je-UL-DaV"/>
@@ -304,6 +303,7 @@
                                 <exclude reference="TAt-pe-qoK"/>
                                 <include reference="rv7-pf-1cX"/>
                                 <include reference="sPh-03-0PI"/>
+                                <include reference="1ag-bz-355"/>
                                 <exclude reference="5UI-yN-4vK"/>
                                 <exclude reference="Rmm-XX-CzB"/>
                                 <exclude reference="RtB-Y8-Znt"/>
@@ -336,7 +336,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-7.2463768115942031" y="66.294642857142861"/>
+            <point key="canvasLocation" x="-493" y="-84"/>
         </scene>
     </scenes>
     <resources>

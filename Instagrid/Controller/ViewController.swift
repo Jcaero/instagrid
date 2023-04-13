@@ -9,40 +9,38 @@ import UIKit
 import PhotosUI
 
 class ViewController: UIViewController, UINavigationControllerDelegate {
+    //selected button
     @IBOutlet weak var rightBtn: UIButton!
     @IBOutlet weak var middleBtn: UIButton!
     @IBOutlet weak var leftBtn: UIButton!
     
+    // view containing user creation
+    @IBOutlet weak var photosView: ShadowView!
+    
+    //view containing button and picture
     @IBOutlet weak var topLeftView: UIView!
     @IBOutlet weak var topRightView: UIView!
     @IBOutlet weak var bottomLeftView: UIView!
     @IBOutlet weak var bottomRightView: UIView!
     
+    // arrow and label for swipe
     @IBOutlet weak var swipeUpLbl: UILabel!
     @IBOutlet weak var arrowIV: UIImageView!
-    @IBOutlet weak var photosView: ShadowView!
     
+    //Image selected by user
     @IBOutlet weak var topLeftIV: UIImageView!
     @IBOutlet weak var topRightIV: UIImageView!
     @IBOutlet weak var bottomLeftIV: UIImageView!
     @IBOutlet weak var bottomRightIV: UIImageView!
     
-    var imagePicker = UIImagePickerController()
-    var viewSelected: Int = 1
+
+    private var imagePicker = UIImagePickerController()
+    private var viewSelected: Int = 1
     
-    var deplacementValue: CGFloat = 0
-    var transformX: CGFloat = 0
-    var transformY: CGFloat = 0
-    
-    var swipeGesture = UISwipeGestureRecognizer()
+    private var swipeGesture = UISwipeGestureRecognizer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // init transform value
-        let height = UIScreen.main.bounds.height
-        let width = UIScreen.main.bounds.width
-        
-        deplacementValue = height>width ? -height : -width
         
         // setup library
         imagePicker.sourceType = .photoLibrary
@@ -54,39 +52,44 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         updateOrientation()
     }
 
+    // init of swipe Gesture with up direction and add in superview
     private func initGestureSwipe() {
-        swipeGesture = UISwipeGestureRecognizer(target: self,
-                                                action: #selector(specificService(_:)))
+        swipeGesture = UISwipeGestureRecognizer(
+            target: self,
+            action: #selector(specificService(_:))
+        )
+        
         swipeGesture.direction = .up
         self.view.addGestureRecognizer(swipeGesture)
         self.view.isUserInteractionEnabled = true
     }
     
-    // identifie orientation of the device
+    // call when orientation of the device change
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         updateOrientation()
     }
     
+    // identifie orientation of the device and change the display
     private func updateOrientation() {
         switch UIDevice.current.orientation {
         case .portrait, .faceUp, .faceDown, .portraitUpsideDown, .unknown:
             swipeUpLbl.text = "Swipe up to share"
             arrowIV.image = UIImage(named: "Arrow Up")
-            transformX = 0
-            transformY = deplacementValue
+            
             swipeGesture.direction = .up
             
         case .landscapeLeft, .landscapeRight:
             swipeUpLbl.text = "Swipe left to share"
             arrowIV.image = UIImage(named: "Arrow Left")
-            transformX = deplacementValue
-            transformY = 0
+
             swipeGesture.direction = .left
             
         default: break
         }
     }
 
+    //  IBOutletCollection of selected layout button
+    // call selectedLayout function with tag
     @IBAction func modifieLayout(_ sender: UIButton) {
         selectedLayout(index: sender.tag)
     }
@@ -120,9 +123,11 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
         topRightView.isHidden = false
     }
     
-    // action when touch
+    // action when touch image area
     @IBAction func selectedImage(_ sender: UIButton) {
+        //value of the button
         viewSelected = sender.tag
+        //show library
         present(imagePicker, animated: true,completion: nil)
     }
 }
@@ -132,10 +137,10 @@ extension ViewController: UIImagePickerControllerDelegate {
     
     // call when user finish with library
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
         
         guard let image = info[.originalImage] as? UIImage else { return }
         
+        //put image in the right view
         switch self.viewSelected {
         case 1: self.topLeftIV.image = image
         case 2: self.topRightIV.image = image
@@ -143,15 +148,25 @@ extension ViewController: UIImagePickerControllerDelegate {
         case 4: self.bottomRightIV.image = image
         default: print("image non ok")
         }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
 }
+
 // UIactivity gestion
 extension ViewController {
     
+    // call when swipe recognize
     @objc func specificService(_ sender: UISwipeGestureRecognizer) {
-        // animation
-        let translationTransform = CGAffineTransform(translationX: transformX , y: transformY)
+
+        // init transform value
+        let height = UIScreen.main.bounds.height
+        let width = UIScreen.main.bounds.width
         
+        // identifie the device orientation and affect the distance
+        let translationTransform = height > width ? CGAffineTransform(translationX: 0, y: -photosView.frame.maxY-5) : CGAffineTransform(translationX: -photosView.frame.maxX-5, y: 0)
+        
+        // animation
         UIView.animate(withDuration: 0.3) {
             self.photosView.transform = translationTransform
         } completion: { finish in
@@ -160,6 +175,7 @@ extension ViewController {
         }
     }
     
+    // display activity Controller
     private func presentActivityController() {
         let image = photosView.getImage()
         
