@@ -8,7 +8,8 @@
 import UIKit
 
 extension UIView {
-    
+    //create an image with view
+    // return UIImage 
     func getImage() -> UIImage {
         let renderer = UIGraphicsImageRenderer(size: self.bounds.size)
         let image = renderer.image{ rendererContext in

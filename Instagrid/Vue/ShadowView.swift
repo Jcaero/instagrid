@@ -18,6 +18,7 @@ class ShadowView: UIView {
         setup()
     }
     
+    // create a black shadow
     private func setup() {
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowRadius = 1

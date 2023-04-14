@@ -261,6 +261,7 @@
                             <constraint firstItem="nz6-eR-VJb" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.8" id="5UI-yN-4vK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vju-B8-gNq" secondAttribute="bottom" constant="10" id="7av-HB-qeV"/>
                             <constraint firstItem="Ibm-TL-BSj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="Noi-oY-2RS"/>
+                            <constraint firstItem="Ibm-TL-BSj" firstAttribute="width" relation="lessThanOrEqual" secondItem="nz6-eR-VJb" secondAttribute="width" id="P1x-mq-NhU"/>
                             <constraint firstItem="ZK4-1U-hfV" firstAttribute="centerX" secondItem="Ibm-TL-BSj" secondAttribute="centerX" id="QUl-7f-0ba"/>
                             <constraint firstItem="nz6-eR-VJb" firstAttribute="top" secondItem="Ibm-TL-BSj" secondAttribute="bottom" constant="15" id="Rmm-XX-CzB"/>
                             <constraint firstItem="nz6-eR-VJb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="RtB-Y8-Znt"/>
@@ -300,6 +301,7 @@
                                 <include reference="rqI-m0-TOl"/>
                                 <exclude reference="1c5-AA-Swq"/>
                                 <include reference="Noi-oY-2RS"/>
+                                <exclude reference="P1x-mq-NhU"/>
                                 <exclude reference="TAt-pe-qoK"/>
                                 <include reference="rv7-pf-1cX"/>
                                 <include reference="sPh-03-0PI"/>

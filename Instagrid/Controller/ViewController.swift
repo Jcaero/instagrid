@@ -56,7 +56,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     private func initGestureSwipe() {
         swipeGesture = UISwipeGestureRecognizer(
             target: self,
-            action: #selector(specificService(_:))
+            action: #selector(specificService)
         )
         
         swipeGesture.direction = .up
@@ -157,9 +157,9 @@ extension ViewController: UIImagePickerControllerDelegate {
 extension ViewController {
     
     // call when swipe recognize
-    @objc func specificService(_ sender: UISwipeGestureRecognizer) {
+    @objc func specificService() {
 
-        // init transform value
+        // height and width of the device screen
         let height = UIScreen.main.bounds.height
         let width = UIScreen.main.bounds.width
         
