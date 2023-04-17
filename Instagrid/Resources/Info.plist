@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>we need to save photos you like</string>
+	<string>we need to save the photo you like</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Delm-Regular</string>
