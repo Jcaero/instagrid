@@ -39,6 +39,12 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     
     private var swipeGesture = UISwipeGestureRecognizer()
 
+    //indicate wich configuration is selected
+    // case 0 : view topRight is hidden
+    // case 1 : view bottomRight is hidden
+    // case 2 : all view is show
+    private var configurationSelected: Int = 1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,7 +62,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     private func initGestureSwipe() {
         swipeGesture = UISwipeGestureRecognizer(
             target: self,
-            action: #selector(specificService)
+            action: #selector(checkSharing)
         )
         
         swipeGesture.direction = .up
@@ -91,7 +97,8 @@ class ViewController: UIViewController, UINavigationControllerDelegate {
     //  IBOutletCollection of selected layout button
     // call selectedLayout function with tag
     @IBAction func modifieLayout(_ sender: UIButton) {
-        selectedLayout(index: sender.tag)
+        configurationSelected = sender.tag
+        selectedLayout(index: configurationSelected)
     }
 
     // display selected image behind the right Layout button
@@ -155,9 +162,35 @@ extension ViewController: UIImagePickerControllerDelegate {
 
 // UIactivity gestion
 extension ViewController {
+    // check if user can share image or show alerte to informing user
+    //call when swipe recognize
+    @objc func checkSharing() {
+        if isAllViewFill() {
+            showUIActivity()
+        }else {
+            let alerte : UIAlertController = UIAlertController(title: "Erreur" ,
+                                                               message: "vous devez remplir toutes les photos pour partager",
+                                                               preferredStyle: .alert)
+            alerte.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+            present(alerte, animated: true, completion: nil)
+        }
+    }
     
-    // call when swipe recognize
-    @objc func specificService() {
+    private func isAllViewFill() -> Bool {
+        // check if left side have image
+        guard topLeftIV.image != nil else { return false}
+        guard bottomLeftIV.image != nil else {return false}
+        
+        // depends on configuration of the view, check right part of the view
+        switch configurationSelected {
+        case 0: return bottomRightIV.image != nil ? true : false
+        case 1: return topRightIV.image != nil ? true : false
+        default: return (bottomRightIV.image != nil) && (topRightIV.image != nil) ? true : false
+        }
+    }
+    
+    // Show UIActivity to share picture
+    private func showUIActivity() {
 
         // height and width of the device screen
         let height = UIScreen.main.bounds.height
